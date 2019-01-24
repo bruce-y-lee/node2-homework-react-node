@@ -9,9 +9,12 @@ require('./services/passport');
 
 
 
+
 mongoose.connect(mongoURI);
 // const keys = require('./config/keys')
 const app = express();
+
+app.use(express.static(__dirname));
 
 app.use( 
     cookieSession({ //create cookie
