@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session'); //access cookie
 const passport = require('passport');  // give cookie info to passport for authen
+const bodyParser = require('body-parser')
 const {mongoURI, cookieKey} = require('./config/keys');
 require('./models/User');
 require('./services/passport');
@@ -13,6 +14,10 @@ require('./services/passport');
 mongoose.connect(mongoURI);
 // const keys = require('./config/keys')
 const app = express();
+
+//make  all the data  parse and set to req.body
+app.use(bodyParser.json())
+
 
 app.use(express.static(__dirname));
 
@@ -32,7 +37,7 @@ app.use(passport.session());
 // });
 
 require('./routes/authroutes')(app);
-
+require('./routes/billingRoutes')(app);
 
 
 

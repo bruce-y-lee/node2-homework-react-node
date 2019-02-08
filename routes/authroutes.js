@@ -7,18 +7,20 @@ module.exports = app => {
     );
 
     app.get('/auth/google/callback',passport.authenticate('google'),(req,res)=>{
-        res.send(req.user);
+        // res.send(req.user);
+        res.redirect('/surveys');
     });
 
     app.get('/api/logout',(req,res)=>{
         // console.log("req",req);
         req.logout();
-        res.send(req.uesr);    
+        // res.send(req.uesr);    
+        res.redirect('/');
     }); 
     app.get('/api/current_user', (req, res) => {
         // console.log("req",req);
-        // res.send(req.user);
-        res.send(req.session);
+        res.send(req.user);
+        // res.send(req.session);
 
     })
 }
