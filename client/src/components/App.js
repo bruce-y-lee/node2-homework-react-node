@@ -7,10 +7,11 @@ import * as actions from '../actions';
 // const Header = () => <h2>Header</h2>\
 import Header from './Header';
 import Landing from './Landing';
+import Dashboard from './Dashboard'
+import SurveyNew from './surveys/SurveyNew';
 
-
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
+// const Dashboard = () => <h2>Dashboard</h2>
+// const SurveyNew = () => <h2>SurveyNew</h2>
 
 
 //browserRouter accept at most 1 component
@@ -26,7 +27,7 @@ class App extends Component {
         return (
             <div className="container">
                 <BrowserRouter>
-                    <div>
+                    <div className="container">
                         <Header />
                         
                         <Route exact={true} path="/" component={Landing}/>

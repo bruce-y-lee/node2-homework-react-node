@@ -115,8 +115,8 @@ class Header extends Component {
                 return;
             case false:
                 return [
-                    <li onClick={this.togglePopup.bind(this)}><button>Sign in</button></li>,
-                    <li onClick={this.togglePopupRegister.bind(this)}><button>Sign up</button></li>
+                    <li key="1" onClick={this.togglePopup.bind(this)}><button>Sign in</button></li>,
+                    <li key="2" onClick={this.togglePopupRegister.bind(this)}><button>Sign up</button></li>
                 ]
                 
             default:

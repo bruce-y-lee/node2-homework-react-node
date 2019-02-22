@@ -191,32 +191,3 @@ passport.use(
         })
 )
 
-// passport.use(new LocalStrategy({
-//     emailField: email,
-//     passwordField: password,
-// },
-//     async (email,password,done) => {
-//         const existingUser = await User.findOne({email: email});
-//         const passwordMatch = await bcrypt.compare(password, existingUser.password);
-//         if(existingUser && passwordMatch){
-//             done(null, existingUser);
-//         }
-//         else {
-//             return done('Incorrect email or password');
-//         }
-//     }
-// ));
-
-// passport.use(new JWTStrategy({
-//     jwtFromRequest: req => req.cookies.jwt,
-//     secretOrKey: 'secret',
-//   },
-//   (jwtPayload, done) => {
-//     if (Date.now() > jwtPayload.expires) {
-//       return done('jwt expired');
-//     }
-
-//     return done(null, jwtPayload);
-//   }
-// ));
-

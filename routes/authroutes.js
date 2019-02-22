@@ -21,7 +21,7 @@ module.exports = app => {
 
     app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), (req, res) => {
         // Successful authentication, redirect home.
-        console.log("success");
+        // console.log("success");
         res.redirect('/surveys');
     });
 
@@ -46,6 +46,7 @@ module.exports = app => {
         // res.send(req.session);
 
     });
+    
 
     
 }
